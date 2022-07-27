@@ -1,9 +1,12 @@
 import { ColumnContainer, ColumnTitle } from "./styles"
 import { FC } from "react";
+import { AddNewItem } from "./AddNewItem";
+
 
 type ColumnProps = {
-    text: string
-    children: string
+    text?: string
+    children: React.ReactNode;
+    
 }
 
 
@@ -14,6 +17,13 @@ export const Column: FC<ColumnProps> = ({ text, children }) => {
                  {text}
             </ColumnTitle>
             {children}
+            
+            
+            <AddNewItem
+                toggleButtonText="+ Add another task"
+                onAdd={console.log}
+                dark
+            />
         </ColumnContainer>
     ) 
 }
